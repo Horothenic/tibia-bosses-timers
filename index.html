@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Bane Bosses Timers</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="https://cdn2.steamgriddb.com/icon/7a5200e5e9b3a893e1c2b0ccba7dd72f/32/32x32.png">
+</head>
+<body>
+    <!-- INFO -->
+    <div class="row">
+        <div class="column">
+            <h2 class="subtitle">WHAT IS THIS?</h2>
+            <p>A simple loop timer but specialized for each Bane boss, making it super easy to use.</p>
+        </div>
+        <div class="column">
+            <h2 class="subtitle">WHY?</h2>
+            <p>I needed an easier-to-use loop timer for the bosses.</p>
+        </div>
+        <div class="column">
+            <h2 class="subtitle">HOW TO USE?</h2>
+            <p>Click a boss to start the recommended timer that we have discovered works constantly to always find a boss spawned.</p>
+        </div>
+    </div>
+
+    <!-- HELPERS -->
+    <h2 class="subtitle">HELPERS</h2>
+
+    <div class="helpers">
+        <div class="helper">
+            <button onclick="stopCurrentTimer()">Stop Current Timer</button>
+        </div>
+    </div>
+    
+    <!-- TIMERS -->
+    <h2 class="subtitle">BANE BOSSES</h2>
+    
+    <div class="timers">
+        <div class="timer">
+            <button id="heoni-button" onclick="startTimer(0, 5, 'heoni', 'Heoni')">
+                <img src="https://static.wikia.nocookie.net/tibia/images/f/fd/Heoni.gif/revision/latest?cb=20220628111215&path-prefix=en&format=original" alt="Heoni">
+                <div class="timer-info">
+                    <h3>Heoni</h3>
+                    <h1 id="heoni">5:45</h1>
+                </div>
+            </button>
+        </div>
+        <div class="timer">
+            <button id="black-knight-button" onclick="startTimer(11, 30, 'black-knight', 'Black Knight')">
+                <img src="https://static.wikia.nocookie.net/tibia/images/e/ef/Black_Knight.gif/revision/latest?cb=20180206145413&path-prefix=en&format=original" alt="Black Knight">
+                <div class="timer-info">
+                    <h3>Black Knight</h3>
+                    <h1 id="black-knight">11:30</h1>
+                </div>
+            </button>
+        </div>
+    </div>
+    <audio id="alarm" src="tururu_vocal.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
