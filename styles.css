@@ -76,6 +76,22 @@ body {
     padding: 10px;
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s; 
+    position: relative;
+}
+
+.timer button .external-link {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    background-color: #ccc;
+    color: #333;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.timer button .external-link:hover {
+    background-color: #bbb;
 }
 
 .timer button img {
