@@ -53,7 +53,7 @@ function formatTime(seconds) {
 function refreshTitle()
 {
     if (currentTimer){
-        document.title = `${currentTimer.displayName} - ${formatTime(currentTimer.remainingSeconds)}`;
+        document.title = `${formatTime(currentTimer.remainingSeconds)} - ${currentTimer.displayName}`;
     }
     else {
         document.title = `Tibia Bane Bosses Timers`;
