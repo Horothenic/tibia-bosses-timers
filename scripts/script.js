@@ -24,30 +24,8 @@ function createTimers()
     });
 }
 
-function createTimers()
-{
-    const container = document.getElementById('timers-container');
-
-    bosses.forEach(boss => {
-        let div = document.createElement('div');
-        div.classList.add('timer');
-        div.innerHTML = `
-            <button id="${boss.id}-button" onclick="startTimer(${boss.minutes}, ${boss.seconds}, '${boss.id}', '${boss.displayName}')">
-                <a href="${boss.guideUrl}" target="_blank" class="external-link" title="Check guide" onclick="handleExternalLinkClick(event)">
-                    <i class="fas fa-book"></i>
-                </a>
-                <img src="${boss.gifUrl}" alt="${boss.displayName}">
-                <div class="timer-info">
-                    <h3>${boss.displayName}</h3>
-                    <h1 id="${boss.id}">${formatTime((boss.minutes * 60) + boss.seconds)}</h1>
-                </div>
-            </button>
-        `;
-        container.appendChild(div);
-    });
-}
-
 function startTimer(minutes, seconds, timerId, displayName) {
+    Analytic_TimerStarted(timerId);
     stopCurrentTimer();
 
     let timerData = {
@@ -77,12 +55,21 @@ function startTimer(minutes, seconds, timerId, displayName) {
         // Reset when it reaches real 0
         if (remainingSeconds <= 0) {
             stopCurrentTimer();
+            Analytic_TimerRestarted(timerId);
             startTimer(minutes, seconds, timerId, displayName);
         }
     }, secondInMilliseconds);
 
     currentTimer = timerData;
     refreshTitle();
+}
+
+function forceStopTimer() {
+    if (currentTimer) {
+        Analytic_ForcedStopTimer(currentTimer.timerId);
+    }
+
+    stopCurrentTimer();
 }
 
 function stopCurrentTimer() {
@@ -114,4 +101,37 @@ function refreshTitle()
 
 function handleExternalLinkClick(event) {
     event.stopPropagation();
+}
+
+//// ANALYTICS ////
+
+function Analytic_TimerStarted(timerId)
+{
+    if (currentTimer && currentTimer.timerId === timerId){
+        gtag('event', 'timer', {
+            'event_category': 'Resetted Timer',
+            'event_label': timerId
+        });
+    }
+
+    gtag('event', 'timer', {
+        'event_category': 'Started',
+        'event_label': timerId
+    });
+}
+
+function Analytic_TimerRestarted(timerId)
+{
+    gtag('event', 'timer', {
+        'event_category': 'Restarted',
+        'event_label': timerId
+    });
+}
+
+function Analytic_ForcedStopTimer(timerId)
+{
+    gtag('event', 'timer', {
+        'event_category': 'Forced Stop',
+        'event_label': timerId
+    });
 }
