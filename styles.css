@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 }
 
 .column {
@@ -130,3 +130,19 @@ body {
 .timer button.selected:hover {
     transform: scale(1);
 }
+
+.contribution-button {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contribution-button:hover {
+    background-color: #555;
+}
+
