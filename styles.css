@@ -10,11 +10,13 @@ body {
 
 .footer {
     position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 12px;
-    color: #888; /* Light gray text color */
+    bottom: 0; /* Change the bottom value to 0 */
+    left: 0;
+    width: 100%; /* Make the footer span the full width */
+    background-color: #111; /* Add a background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center align the text */
+    font-size: 11px;
 }
 
 .information {
