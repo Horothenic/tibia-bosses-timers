@@ -31,10 +31,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Debug - Show contents of specific file
-        run: cat index.html
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
