@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<audio id="alarm" src="tururu_vocal.mp3"></audio>
+<audio id="alarm" src="tururu_vocal.wav"></audio>
 <script src="scripts/script.js"></script>
 <script src="scripts/bosses-list.js"></script>
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QSCNX8MWDH"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-QSCNX8MWDH');
+    </script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tibia Bane Bosses Timers</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="https://cdn2.steamgriddb.com/icon/7a5200e5e9b3a893e1c2b0ccba7dd72f/32/32x32.png">
+    <link rel="icon" type="image/x-icon" href="images/tibia.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
     <!-- INFO -->
-    <div class="row">
-        <div class="column">
-            <h2 class="subtitle">WHAT IS THIS?</h2>
-            <p>A simple loop timer but specialized for each Bane boss, making it super easy to use.</p>
-        </div>
+    <div class="information">
         <div class="column">
             <h2 class="subtitle">WHY?</h2>
-            <p>I needed an easier-to-use loop timer for the bosses.</p>
+            <p>I needed an easier-to-use loop timer for the bosses so I made a simple loop timer but specialized for each Tibia Bane boss.</p>
+            <p>Not web developer, I used Chat GPT and my basics in web to create this.</p>
         </div>
         <div class="column">
             <h2 class="subtitle">HOW TO USE?</h2>
-            <p>Click a boss to start the recommended timer that we have discovered works constantly to always find a boss spawned.</p>
+            <p>1. Click the one you are currently farming and wait for the alarm.</p>
+            <p>2. When alarm sounds go kill the boss and return to your waiting zone.</p>
+        </div>
+        <div class="column">
+            <h2 class="subtitle">WANT TO CONTRIBUTE?</h2>
+            <div>
+                <p>Add a new issue in GitHub or contact me on my networks to help with code.</p>
+            </div>
+            <div>
+                <a href="https://github.com/Horothenic/tibia-bane-bosses-farming-timers/issues" class="contribution-button" target="_blank" title="GitHub Repository">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://horothenic.com/" class="contribution-button" target="_blank" title="My blog">
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -37,7 +59,7 @@
 
     <div class="helpers">
         <div class="helper">
-            <button onclick="stopCurrentTimer()">Stop Current Timer</button>
+            <button onclick="forceStopTimer()">Stop Current Timer</button>
         </div>
     </div>
     
@@ -48,6 +70,10 @@
         <script>
             createTimers();
         </script>
+    </div>
+
+    <div class="footer">
+        <p>Made by Horothenic</p>
     </div>
 </body>
 </html>
