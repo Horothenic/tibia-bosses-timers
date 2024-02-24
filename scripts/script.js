@@ -59,18 +59,24 @@ function startTimer(minutes, seconds, timerId, displayName) {
     };
 
     document.getElementById(`${timerData.timerId}-button`).classList.add('selected');
+    document.getElementById(timerData.timerId).innerText = formatTime(Math.floor(timerData.totalSeconds - 1));
 
     let start = Date.now();
     timerData.intervalId = setInterval(() => {
         currentTimer.secondsElapsed = (Date.now() - start) / secondInMilliseconds;
+        let remainingSeconds = timerData.totalSeconds - currentTimer.secondsElapsed;
 
         document.getElementById(timerData.timerId).innerText = formatTime(Math.floor(timerData.totalSeconds - timerData.secondsElapsed));
         refreshTitle();
-    
-        if (currentTimer.secondsElapsed > timerData.totalSeconds) {
-            stopCurrentTimer();
-            document.getElementById('alarm').play();
 
+        // Sound alarm when the system shows 00:00
+        if (remainingSeconds <= 1 && remainingSeconds > 0) {
+            document.getElementById('alarm').play();
+        }
+    
+        // Reset when it reaches real 0
+        if (remainingSeconds <= 0) {
+            stopCurrentTimer();
             startTimer(minutes, seconds, timerId, displayName);
         }
     }, secondInMilliseconds);
