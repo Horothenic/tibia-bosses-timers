@@ -19,7 +19,7 @@ const bosses = [
         id: 'diseased',
         minutes: 4,
         seconds: 0,
-        displayName: 'Diseased',
+        displayName: 'Diseased x3',
         guideUrl: 'https://www.youtube.com/watch?v=NGFseS_XI7I,',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708877549/tibia-bane-bosses-farming-timers/diseased-bros.gif'
     }
