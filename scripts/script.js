@@ -12,8 +12,14 @@ function createTimers()
             <button id="${boss.id}-button" onclick="startTimer(${boss.minutes}, ${boss.seconds}, '${boss.id}', '${boss.displayName}')">
                 <a href="${boss.guideUrl}" target="_blank" class="external-link" title="Check guide" onclick="handleExternalLinkClick(event)">
                     <i class="fas fa-book"></i>
-                </a>
-                <img src="${boss.gifUrl}" alt="${boss.displayName}">
+                </a>`
+                + 
+                (boss.tooltip === '' ? '' : 
+                `<a target="_blank" class="tooltip" title="${boss.tooltip}" onclick="handleExternalLinkClick(event)">
+                    <i class="fas fa-star"></i>
+                </a>`)
+                +
+                `<img src="${boss.gifUrl}" alt="${boss.displayName}">
                 <div class="timer-info">
                     <h3>${boss.displayName}</h3>
                     <h1 id="${boss.id}">${formatTime((boss.minutes * 60) + boss.seconds)}</h1>
