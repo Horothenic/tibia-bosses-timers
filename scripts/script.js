@@ -1,11 +1,11 @@
 const secondInMilliseconds = 1000;
 let currentTimer;
 
-function createTimers()
+function createTimers(bossList, id)
 {
-    const container = document.getElementById('timers-container');
+    const container = document.getElementById(id);
 
-    bosses.forEach(boss => {
+    bossList.forEach(boss => {
         let div = document.createElement('div');
         div.classList.add('timer');
         div.innerHTML = `

@@ -58,9 +58,17 @@
     <!-- TIMERS -->
     <h2 class="subtitle">BANE BOSSES</h2>
     
-    <div class="timers" id="timers-container">
+    <div class="timers" id="bane-timers-container">
         <script>
-            createTimers();
+            createTimers(baneBosses, 'bane-timers-container');
+        </script>
+    </div>
+
+    <h2 class="subtitle">EVENT BOSSES</h2>
+    
+    <div class="timers" id="event-timers-container">
+        <script>
+            createTimers(eventBosses, 'event-timers-container');
         </script>
     </div>
 

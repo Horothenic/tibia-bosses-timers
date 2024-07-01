@@ -1,4 +1,4 @@
-const bosses = [
+const baneBosses = [
     { 
         id: 'heoni',
         minutes: 5,
@@ -35,4 +35,16 @@ const bosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1709265621/tibia-bane-bosses-farming-timers/glitterscale.webp',
         tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you so you can avoid using the timer.'
     }
+];
+
+const eventBosses = [
+    { 
+        id: 'bane-lord',
+        minutes: 25,
+        seconds: 0,
+        displayName: 'Bane Lord',
+        guideUrl: 'https://www.youtube.com/watch?v=Pip3dN_StkU',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/bane_lord.gif',
+        tooltip: 'The possibility of an event is exact so try to start the timer a few seconds before the cue.'
+    },
 ];
