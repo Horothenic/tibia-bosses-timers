@@ -1,5 +1,7 @@
 const secondInMilliseconds = 1000;
-let currentTimer;
+
+let currentGroup = '';
+let currentTimers = [];
 
 function createTimers(bossList, id)
 {
@@ -39,7 +41,7 @@ function createTimers(bossList, id)
         }
     
         div.innerHTML = `
-            <button id="${boss.id}-button" onclick="startTimer(${boss.minutes}, ${boss.seconds}, '${boss.id}', '${boss.displayName}')">
+            <button id="${boss.id}-button" onclick='startTimer(${JSON.stringify(boss)})'>
                 ${externalLink}
                 ${tooltipLink}
                 ${groupLink}
@@ -55,63 +57,133 @@ function createTimers(bossList, id)
     });
 }
 
-function startTimer(minutes, seconds, timerId, displayName) {
-    Analytic_TimerStarted(timerId);
-    stopCurrentTimer();
+function startTimer(boss) {
+    // Handles the different ways a timer can start.
+
+    if (hasCurrentTimerData(boss.id)) {
+        stopCurrentTimer(boss.id);
+        Analytic_TimerResetted(boss.id);
+    }
+    else {
+        if (boss.groupId == '' || currentGroup !== boss.groupId)
+        {
+            stopCurrentTimers();
+        }
+
+        Analytic_TimerStarted(boss.id);
+    }
+
+    // Set the current data.
+    currentGroup = boss.groupId;
 
     let timerData = {
         intervalId: null,
-        totalSeconds: (minutes * 60) + seconds,
+        totalSeconds: (boss.minutes * 60) + boss.seconds,
         secondsElapsed: 0,
-        timerId: timerId,
-        displayName: displayName
+        boss: boss,
+        startDate: Date.now()
     };
 
-    document.getElementById(`${timerData.timerId}-button`).classList.add('selected');
-    document.getElementById(timerData.timerId).innerText = formatTime(Math.floor(timerData.totalSeconds - 1));
+    // Update the boss button.
+    document.getElementById(`${timerData.boss.id}-button`).classList.add('selected');
+    document.getElementById(timerData.boss.id).innerText = formatTime(Math.floor(timerData.totalSeconds - 1));
 
-    let start = Date.now();
-    timerData.intervalId = setInterval(() => {
-        currentTimer.secondsElapsed = (Date.now() - start) / secondInMilliseconds;
-        let remainingSeconds = timerData.totalSeconds - currentTimer.secondsElapsed;
+    // Interval code.
+    (function(timerData) {
+        timerData.intervalId = setInterval(() => {
+            timerData.secondsElapsed = (Date.now() - timerData.startDate) / secondInMilliseconds;
+            let remainingSeconds = timerData.totalSeconds - timerData.secondsElapsed;
 
-        document.getElementById(timerData.timerId).innerText = formatTime(Math.floor(timerData.totalSeconds - timerData.secondsElapsed));
+            document.getElementById(timerData.boss.id).innerText = formatTime(Math.floor(timerData.totalSeconds - timerData.secondsElapsed));
+            refreshTitle();
+
+            // Sound alarm when the system shows 00:00
+            if (remainingSeconds <= 1 && remainingSeconds > 0) {
+                document.getElementById('alarm').play();
+            }
+
+            // Reset when it reaches real 0
+            if (remainingSeconds <= 0) {
+                stopCurrentTimer(timerData.boss.id);
+
+                if (timerData.boss.autoRestart) {
+                    Analytic_TimerRestarted(timerData.boss.id);
+                    startTimer(timerData.boss);
+                }
+
+                refreshTitle();
+            }
+
+            setCurrentTimerData(timerData.boss.id, timerData);
+        }, secondInMilliseconds);
+
+        // Add to the current timers array.
+        currentTimers.push({
+            id: timerData.boss.id,
+            timerData: timerData
+        });
         refreshTitle();
+    })(timerData);
+}
 
-        // Sound alarm when the system shows 00:00
-        if (remainingSeconds <= 1 && remainingSeconds > 0) {
-            document.getElementById('alarm').play();
-        }
-    
-        // Reset when it reaches real 0
-        if (remainingSeconds <= 0) {
-            stopCurrentTimer();
-            Analytic_TimerRestarted(timerId);
-            startTimer(minutes, seconds, timerId, displayName);
-        }
-    }, secondInMilliseconds);
+function hasCurrentTimerData(id) {
+    return currentTimers.some(timer => timer.id === id);
+}
 
-    currentTimer = timerData;
+function getCurrentTimerData(id)
+{
+    currentTimers.forEach(timer => {
+        if (timer.id === id) {
+            return timer.timerData;
+        }
+    });
+
+    return null;
+}
+
+function setCurrentTimerData(id, timerData)
+{
+    currentTimers.forEach(timer => {
+        if (timer.id === id) {
+            timer.timerData = timerData;
+        }
+    });
+}
+
+function forceStopTimers() {
+    currentTimers.forEach(timer => {
+        Analytic_ForcedStopTimer(timer.timerData.boss.id);
+    });
+
+    stopCurrentTimers();
+}
+
+function stopCurrentTimer(id) {
+    const index = currentTimers.findIndex(timer => timer.id === id);
+
+    if (index !== -1) {
+        stopTimerInternal(currentTimers[index].timerData);
+        currentTimers.splice(index, 1);
+    }
+
     refreshTitle();
 }
 
-function forceStopTimer() {
-    if (currentTimer) {
-        Analytic_ForcedStopTimer(currentTimer.timerId);
-    }
+function stopCurrentTimers() {
+    currentTimers.forEach(timer => {
+        stopTimerInternal(timer.timerData);
+    });
 
-    stopCurrentTimer();
-}
-
-function stopCurrentTimer() {
-    if (currentTimer) {
-        clearInterval(currentTimer.intervalId);
-        document.getElementById(currentTimer.timerId).innerText = formatTime(currentTimer.totalSeconds);
-        document.getElementById(`${currentTimer.timerId}-button`).classList.remove('selected');
-        currentTimer = null;
-    }
+    currentTimers = [];
 
     refreshTitle();
+}
+
+function stopTimerInternal(timerData)
+{
+    clearInterval(timerData.intervalId);
+    document.getElementById(timerData.boss.id).innerText = formatTime(timerData.totalSeconds);
+    document.getElementById(`${timerData.boss.id}-button`).classList.remove('selected');
 }
 
 function formatTime(seconds) {
@@ -122,8 +194,26 @@ function formatTime(seconds) {
 
 function refreshTitle()
 {
-    if (currentTimer){
-        document.title = `${formatTime(currentTimer.totalSeconds - currentTimer.secondsElapsed)} - ${currentTimer.displayName}`;
+    if (currentTimers.length === 1){
+        let timerData = currentTimers[0].timerData;
+        document.title = `${formatTime(timerData.totalSeconds - timerData.secondsElapsed)} - ${timerData.boss.displayName}`;
+    }
+    else if (currentTimers.length > 1){
+        let nextTimerData;
+
+        currentTimers.forEach(timer => {
+            let timerData = timer.timerData;
+
+            if (nextTimerData === undefined) {
+                nextTimerData = timerData;
+            }
+
+            if (timerData.totalSeconds - timerData.secondsElapsed < nextTimerData.totalSeconds - nextTimerData.secondsElapsed) {
+                nextTimerData = timerData;
+            }
+        });
+
+        document.title = `${formatTime(nextTimerData.totalSeconds - nextTimerData.secondsElapsed)} - ${nextTimerData.boss.groupDisplayName}`;
     }
     else {
         document.title = `Tibia Bane Bosses Timers`;

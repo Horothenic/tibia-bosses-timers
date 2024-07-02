@@ -8,7 +8,8 @@ const baneBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/heoni.webp',
         tooltip: '',
         groupId: '',
-        groupDisplayName: ''
+        groupDisplayName: '',
+        autoRestart: true
     },
     { 
         id: 'black-knight',
@@ -19,7 +20,8 @@ const baneBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/black-knight.webp',
         tooltip: '',
         groupId: '',
-        groupDisplayName: ''
+        groupDisplayName: '',
+        autoRestart: true
     },
     { 
         id: 'diseased',
@@ -30,7 +32,8 @@ const baneBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708877549/tibia-bane-bosses-farming-timers/diseased-bros.gif',
         tooltip: '',
         groupId: '',
-        groupDisplayName: ''
+        groupDisplayName: '',
+        autoRestart: true
     },
     { 
         id: 'glitterscale',
@@ -41,7 +44,8 @@ const baneBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1709265621/tibia-bane-bosses-farming-timers/glitterscale.webp',
         tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you so you can avoid using the timer.',
         groupId: '',
-        groupDisplayName: ''
+        groupDisplayName: '',
+        autoRestart: true
     }
 ];
 
@@ -55,7 +59,8 @@ const archfoeBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/tamru_the_black.gif',
         tooltip: '',
         groupId: "full-moon",
-        groupDisplayName: '[Full moon] group, you can have multiple timers as long as they are of the same group.'
+        groupDisplayName: 'Full Moon',
+        autoRestart: false
     },
     { 
         id: 'ayana-the-crimson-curse',
@@ -66,7 +71,8 @@ const archfoeBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/ayana_the_crimson_curse.gif',
         tooltip: '',
         groupId: "full-moon",
-        groupDisplayName: '[Full moon] group, you can have multiple timers as long as they are of the same group.'
+        groupDisplayName: 'Full Moon',
+        autoRestart: false
     },
     { 
         id: 'owin',
@@ -77,7 +83,8 @@ const archfoeBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878589/tibia-bane-bosses-farming-timers/owin.gif',
         tooltip: '',
         groupId: "full-moon",
-        groupDisplayName: '[Full moon] group, you can have multiple timers as long as they are of the same group.'
+        groupDisplayName: 'Full Moon',
+        autoRestart: false
     },
 ];
 
@@ -91,6 +98,7 @@ const eventBosses = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/bane_lord.gif',
         tooltip: 'The possibility of an event is exact so try to start the timer a few seconds before the cue.',
         groupId: '',
-        groupDisplayName: ''
+        groupDisplayName: '',
+        autoRestart: true
     },
 ];

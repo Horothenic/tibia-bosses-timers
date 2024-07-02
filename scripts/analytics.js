@@ -1,49 +1,53 @@
-function Analytic_TimerStarted(timerId)
+function Analytic_TimerStarted(id)
 {
     let amplitudeEvents = [];
-    if (currentTimer && currentTimer.timerId === timerId){
-        amplitudeEvents.push({
-            "user_id": "Generic",
-            "event_type": "Timer Resetted",
-            "event_properties": {
-                "timer_id": timerId
-            }
-        });
-    }
-
     amplitudeEvents.push({
         "user_id": "Generic",
         "event_type": "Timer Started",
         "event_properties": {
-            "timer_id": timerId
+            "timer_id": id
         }
     });
 
     sendEventsToAmplitude(amplitudeEvents);
 }
 
-function Analytic_TimerRestarted(timerId)
+function Analytic_TimerResetted(id)
+{
+    let amplitudeEvents = [];
+    amplitudeEvents.push({
+        "user_id": "Generic",
+        "event_type": "Timer Resetted",
+        "event_properties": {
+            "timer_id": id
+        }
+    });
+
+    sendEventsToAmplitude(amplitudeEvents);
+}
+
+function Analytic_TimerRestarted(id)
 {
     let amplitudeEvents = [];
     amplitudeEvents.push({
         "user_id": "Generic",
         "event_type": "Timer Restarted",
         "event_properties": {
-            "timer_id": timerId
+            "timer_id": id
         }
     });
 
     sendEventsToAmplitude(amplitudeEvents);
 }
 
-function Analytic_ForcedStopTimer(timerId)
+function Analytic_ForcedStopTimer(id)
 {
     let amplitudeEvents = [];
     amplitudeEvents.push({
         "user_id": "Generic",
         "event_type": "Timer Forced Stop",
         "event_properties": {
-            "timer_id": timerId
+            "timer_id": id
         }
     });
 
