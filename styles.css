@@ -92,9 +92,8 @@ body {
     position: relative;
 }
 
-.timer button .external-link {
+.timer button .subButton {
     position: absolute;
-    top: 5px;
     right: 6px;
     background-color: #ccc;
     color: #333;
@@ -103,23 +102,28 @@ body {
     text-decoration: none;
 }
 
-.timer button .external-link:hover {
-    background-color: #bbb;
-}
-
-.timer button .tooltip {
-    position: absolute;
-    top: 37px;
-    right: 6px;
-    background-color: #ccc;
-    color: #333;
+.timer button .subButtonTooltip {
     padding: 5px 5px;
-    border-radius: 5px;
-    text-decoration: none;
 }
 
-.timer button .tooltip:hover {
+.timer button .subButtonGroup {
+    padding: 5px 4.5px;
+}
+
+.timer button .subButton:hover {
     background-color: #bbb;
+}
+
+.timer button .subButtonFirst {
+    top: 5px;
+}
+
+.timer button .subButtonSecond {
+    top: 37px;
+}
+
+.timer button .subButtonThird {
+    top: 69px;
 }
 
 .timer button img {
