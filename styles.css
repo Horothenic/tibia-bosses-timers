@@ -19,46 +19,70 @@ body {
     font-size: 11px;
 }
 
-.information {
+.container {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: -10px;
+    width: 100%;
 }
 
-.column {
-    flex: 1;
+.left-column {
+    width: 30%;
+    padding: 10px;
+    background-color: #111; /* Dark gray background */
+}
+
+.right-column {
+    width: 70%;
+    padding: 10px;
+    padding-top: 40px;
+    background-color: #111; /* Dark gray background */
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-element {
     padding: 20px;
-    max-width: 300px;
-    text-align: center;
-    margin: 0 10px; /* Add margin to create space between columns */
+    max-width: 340px;
+    text-align: left;
+    margin-top: -35px;
+}
+
+.info-element p {
+    font-size: 15px;
 }
 
 .title {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-top: 25px;
+    margin-bottom: 30px;
     color: #fff; /* White title color */
 }
 
 .subtitle {
     font-size: 24px;
     margin-bottom: 10px;
+    text-align: center;
     color: #ddd; /* Light gray subtitle color */
 }
 
 .helpers {
-    margin-bottom: 40px; /* Adjust this value to reduce the space */
+    margin-top: 40px;
 }
 
 .helper button {
-    padding: 15px 25px;
-    font-size: 16px;
+    padding: 20px 35px; /* Increase padding */
+    font-size: 18px; /* Increase font size */
     cursor: pointer;
     background-color: #333; /* Dark gray button background color */
     color: #ccc; /* Light gray button text color */
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    min-width: 200px; /* Set minimum width */
+    min-height: 60px; /* Set minimum height */
 }
 
 .helper button:hover {
@@ -160,6 +184,10 @@ body {
     transform: scale(1);
 }
 
+.contribution {
+    text-align: center;
+}
+
 .contribution-button {
     display: inline-block;
     padding: 10px 10px;
@@ -174,4 +202,3 @@ body {
 .contribution-button:hover {
     background-color: #555;
 }
-

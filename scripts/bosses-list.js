@@ -27,7 +27,7 @@ const baneBosses = [
         id: 'diseased',
         minutes: 4,
         seconds: 0,
-        displayName: 'Diseased x3',
+        displayName: 'Diseased',
         guideUrl: 'https://www.youtube.com/watch?v=NGFseS_XI7I,',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708877549/tibia-bane-bosses-farming-timers/diseased-bros.gif',
         tooltip: '',
@@ -42,7 +42,7 @@ const baneBosses = [
         displayName: 'Glitterscale',
         guideUrl: 'https://www.youtube.com/watch?v=1DT9wr9wiYE',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1709265621/tibia-bane-bosses-farming-timers/glitterscale.webp',
-        tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you so you can avoid using the timer.',
+        tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you, be careful if you go this route.',
         groupId: '',
         groupDisplayName: '',
         autoRestart: true
