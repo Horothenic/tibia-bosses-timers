@@ -99,7 +99,7 @@ function startTimer(boss) {
 
             // Sound alarm when the system shows 00:00
             if (remainingSeconds <= 1 && remainingSeconds > 0) {
-                document.getElementById('alarm').play();
+                document.getElementById('alarm-' + timerData.boss.id).play();
             }
 
             // Reset when it reaches real 0
