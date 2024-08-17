@@ -3,7 +3,8 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="scripts/bosses-list.js"></script>
-<script src="scripts/script.js"></script>
+<script src="scripts/information-popup-script.js"></script>
+<script src="scripts/timers-script.js"></script>
 <script src="scripts/analytics.js"></script>
 
 <head>
@@ -25,7 +26,7 @@
     </div>
 
     <div class="information">
-        <button id="informationButton">
+        <button id="informationButton" onclick="onOpenInformationPopUp()">
             <i class="fas fa-list"></i>
             <span class="tooltip">Information</span>
         </button>
@@ -55,6 +56,48 @@
             <script>
                 createTimers(eventBosses, 'event-timers-container');
             </script>
+        </div>
+    </div>
+
+    <div id="information-popup" class="information-popup-bg">
+        <div class="information-popup-content">
+            <div class="popup-columns">
+                <div class="column">
+                    <div class="info-element">
+                        <h2 class="subtitle">WHY?</h2>
+                        <p>I wanted something that were easy to use with all the timers I have been using to farm bosses.</p>
+                        <p>Not web developer, I used Chat GPT and my basics in web development to create this.</p>
+                    </div>
+                    <div class="info-element">
+                        <h2 class="subtitle">HOW TO USE?</h2>
+                        <p>1. Check the guide attached to each boss to know the mechanics.</p>
+                        <p>2. Click the one you will be farming and wait for the alarm.</p>
+                        <p>3. When the alarm sounds go kill the boss and return to the waiting zone.</p>
+                        <p>4. The timer usually resets itself unless there is a special mechanic (check the guide).</p>
+                        <p>5. Some bosses have a special tooltip, do not forget to check them.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="info-element">
+                        <h2 class="subtitle">GROUPS</h2>
+                        <p>If a boss is part of a group you can start individual timers for each boss of the group, otherwise you can only activate one timer at a time.</p>
+                    </div>
+                    <div class="info-element">
+                        <h2 class="subtitle">WANT TO CONTRIBUTE?</h2>
+                        <div>
+                            <p>Add a new issue in GitHub or contact me on my networks to help with code.</p>
+                        </div>
+                        <div class="contribution">
+                            <a href="https://github.com/Horothenic/tibia-bane-bosses-farming-timers/issues" class="contribution-button" target="_blank" title="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://horothenic.com/" class="contribution-button" target="_blank" title="My blog">
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

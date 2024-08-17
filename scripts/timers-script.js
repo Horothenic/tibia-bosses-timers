@@ -3,8 +3,7 @@ const secondInMilliseconds = 1000;
 let currentGroup = '';
 let currentTimers = [];
 
-function createTimers(bossList, id)
-{
+function createTimers(bossList, id){
     const container = document.getElementById(id);
     let subButtonsHeight = 37;
 
