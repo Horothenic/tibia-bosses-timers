@@ -19,6 +19,20 @@ body {
     font-size: 11px;
 }
 
+.footer a {
+    color: #ccc;
+    text-decoration: underline; /* Keeps the underline */
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #fff; /* Lighter color on hover */
+}
+
+.footer a:visited {
+    color: #ccc; /* Keeps the color the same after visiting the link */
+}
+
 .container {
     width: 100%;
 }
