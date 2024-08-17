@@ -13,12 +13,22 @@
     <title>Tibia Bosses Timers</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+    <div class="stop">
+        <button onclick="forceStopTimers()">
+            <i class="fas fa-circle-stop"></i>
+            <span class="tooltip">Stop timers</span>
+        </button>
+    </div>
+
     <div class="information">
-        <button id="informationButton" title="Information"><i class="fas fa-list"></i></button>
+        <button id="informationButton">
+            <i class="fas fa-list"></i>
+            <span class="tooltip">Information</span>
+        </button>
     </div>
 
     <div class="container">
@@ -26,7 +36,6 @@
             <h1 class="title">TIBIA BOSSES TIMERS</h1>
         </div>
 
-        <!-- TIMERS -->
         <h2 class="subtitle">BANE BOSSES</h2>
         <div class="timers" id="bane-timers-container">
             <script>
@@ -46,13 +55,6 @@
             <script>
                 createTimers(eventBosses, 'event-timers-container');
             </script>
-        </div>
-
-        <!-- HELPERS -->
-        <div class="helpers">
-            <div class="helper">
-                <button onclick="forceStopTimers()">Stop Timers</button>
-            </div>
         </div>
     </div>
 
