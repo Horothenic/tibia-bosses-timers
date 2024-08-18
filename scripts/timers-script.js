@@ -215,7 +215,7 @@ function refreshTitle()
         document.title = `${formatTime(nextTimerData.totalSeconds - nextTimerData.secondsElapsed)} - ${nextTimerData.boss.groupDisplayName}`;
     }
     else {
-        document.title = `Tibia Bane Bosses Timers`;
+        document.title = `Tibia Bosses Timers`;
     }
 }
 
