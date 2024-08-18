@@ -3,10 +3,8 @@ const secondInMilliseconds = 1000;
 let currentGroup = '';
 let currentTimers = [];
 
-function createTimers(bossList, id)
-{
-    const container = document.getElementById(id);
-    let subButtonsHeight = 37;
+function createTimers(bossList, containerId){
+    const container = document.getElementById(containerId);
 
     bossList.forEach(boss => {
         let div = document.createElement('div');
@@ -23,7 +21,6 @@ function createTimers(bossList, id)
     
         let tooltipLink = '';
         if (boss.tooltip !== '') {
-            subButtonsHeight += 32;
             tooltipLink = `
             <a target="_blank" class="subButton subButtonTooltip ${subButtonOrderClass}" title="${boss.tooltip}" onclick="handleExternalLinkClick(event)">
                 <i class="fas fa-star"></i>
@@ -33,7 +30,6 @@ function createTimers(bossList, id)
     
         let groupLink = '';
         if (boss.groupId !== '') {
-            subButtonsHeight += 32;
             groupLink = `
             <a target="_blank" class="subButton subButtonGroup ${subButtonOrderClass}" title="${boss.groupDisplayName}" onclick="handleExternalLinkClick(event)">
                 <i class="fas fa-users"></i>
@@ -216,10 +212,17 @@ function refreshTitle()
         document.title = `${formatTime(nextTimerData.totalSeconds - nextTimerData.secondsElapsed)} - ${nextTimerData.boss.groupDisplayName}`;
     }
     else {
-        document.title = `Tibia Bane Bosses Timers`;
+        document.title = `Tibia Bosses Timers`;
     }
 }
 
 function handleExternalLinkClick(event) {
     event.stopPropagation();
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        event.preventDefault(); // Prevent scrolling when pressing space bar
+        forceStopTimers(); // Call your function
+    }
+});

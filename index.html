@@ -3,97 +3,95 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="scripts/bosses-list.js"></script>
-<script src="scripts/script.js"></script>
+<script src="scripts/information-popup-script.js"></script>
+<script src="scripts/timers-script.js"></script>
 <script src="scripts/analytics.js"></script>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tibia Bane Bosses Timers</title>
+    <title>Tibia Bosses Timers</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
+    <div class="stop">
+        <button onclick="forceStopTimers()">
+            <i class="fas fa-circle-stop"></i>
+            <span class="tooltip">
+                Stop timers
+                <br>
+                <small>(or press space bar)</small>
+            </span>
+        </button>
+    </div>
+
+    <div class="information">
+        <button id="informationButton" onclick="onOpenInformationPopUp()">
+            <i class="fas fa-list"></i>
+            <span class="tooltip">Information</span>
+        </button>
+    </div>
+
     <div class="container">
-        <!-- LEFT COLUMN -->
-        <div class="left-column">
-            <!-- INFO -->
-            <div class="information">
-                <div>
-                    <h1 class="title">TIBIA BOSSES TIMERS</h1>
-                </div>
-                <div class="info-element">
-                    <h2 class="subtitle">WHY?</h2>
-                    <p>I wanted something that were easy to use with all the timers I have been using to farm bosses.</p>
-                    <p>Not web developer, I used Chat GPT and my basics in web development to create this.</p>
-                </div>
-                <div class="info-element">
-                    <h2 class="subtitle">HOW TO USE?</h2>
-                    <p>1. Check the guide attached to each boss to know the mechanics.</p>
-                    <p>2. Click the one you will be farming and wait for the alarm.</p>
-                    <p>3. When the alarm sounds go kill the boss and return to the waiting zone.</p>
-                    <p>4. The timer usually resets itself unless there is a special mechanic (check the guide).</p>
-                    <p>5. Some bosses have a special tooltip, do not forget to check them.</p>
-                </div>
-                <div class="info-element">
-                    <h2 class="subtitle">GROUPS</h2>
-                    <p>If a boss is part of a group you can start individual timers for each boss of the group, otherwise you can only activate one timer at a time.</p>
-                </div>
-                <div class="info-element">
-                    <h2 class="subtitle">WANT TO CONTRIBUTE?</h2>
-                    <div>
-                        <p>Add a new issue in GitHub or contact me on my networks to help with code.</p>
-                    </div>
-                    <div class="contribution">
-                        <a href="https://github.com/Horothenic/tibia-bane-bosses-farming-timers/issues" class="contribution-button" target="_blank" title="GitHub Repository">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://horothenic.com/" class="contribution-button" target="_blank" title="My blog">
-                            <i class="fa fa-user"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div>
+            <h1 class="title">TIBIA BOSSES TIMERS</h1>
         </div>
 
-        <!-- RIGHT COLUMN -->
-        <div class="right-column">
-            <!-- TIMERS -->
-            <h2 class="subtitle">BANE BOSSES</h2>
-            <div class="timers" id="bane-timers-container">
-                <script>
-                    createTimers(baneBosses, 'bane-timers-container');
-                </script>
-            </div>
+        <div class="timers" id="timers-container">
+            <script>
+                createTimers(bossesList, 'timers-container');
+            </script>
+        </div>
+    </div>
 
-            <h2 class="subtitle">ARCHFOE BOSSES</h2>
-            <div class="timers" id="archfoe-timers-container">
-                <script>
-                    createTimers(archfoeBosses, 'archfoe-timers-container');
-                </script>
-            </div>
-
-            <h2 class="subtitle">EVENT BOSSES</h2>
-            <div class="timers" id="event-timers-container">
-                <script>
-                    createTimers(eventBosses, 'event-timers-container');
-                </script>
-            </div>
-
-            <!-- HELPERS -->
-            <div class="helpers">
-                <div class="helper">
-                    <button onclick="forceStopTimers()">Stop Timers</button>
+    <div id="information-popup" class="information-popup-bg">
+        <div class="information-popup-content">
+            <div class="popup-columns">
+                <div class="column">
+                    <div class="info-element">
+                        <h2 class="subtitle">WHY?</h2>
+                        <p>I wanted something that were easy to use with all the timers I have been using to farm bosses.</p>
+                        <p>Not web developer, I used Chat GPT and my basics in web development to create this.</p>
+                    </div>
+                    <div class="info-element">
+                        <h2 class="subtitle">HOW TO USE?</h2>
+                        <p>1. Check the guide attached to each boss to know the mechanics.</p>
+                        <p>2. Click the one you will be farming and wait for the alarm.</p>
+                        <p>3. When the alarm sounds go kill the boss and return to the waiting zone.</p>
+                        <p>4. The timer usually resets itself unless there is a special mechanic (check the guide).</p>
+                        <p>5. Some bosses have a special tooltip, do not forget to check them.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="info-element">
+                        <h2 class="subtitle">GROUPS</h2>
+                        <p>If a boss is part of a group you can start individual timers for each boss of the group, otherwise you can only activate one timer at a time.</p>
+                    </div>
+                    <div class="info-element">
+                        <h2 class="subtitle">WANT TO CONTRIBUTE?</h2>
+                        <div>
+                            <p>Add a new issue in GitHub or contact me on my networks to help with code.</p>
+                        </div>
+                        <div class="contribution">
+                            <a href="https://github.com/Horothenic/tibia-bane-bosses-farming-timers/issues" class="contribution-button" target="_blank" title="GitHub Repository">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://horothenic.com/" class="contribution-button" target="_blank" title="My blog">
+                                <i class="fa fa-user"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <p>Made by Horothenic</p>
+        <p>Made by <a href="https://horothenic.com" target="_blank">Horothenic</a></p>
     </div>
 </body>
 </html>
@@ -102,7 +100,6 @@
 <audio id="alarm-bane-lord" src="sounds/bane-lord.wav"></audio>
 <audio id="alarm-black-knight" src="sounds/black-knight.wav"></audio>
 <audio id="alarm-diseased" src="sounds/diseased.wav"></audio>
-<audio id="alarm-fire-field" src="sounds/fire-field.wav"></audio>
 <audio id="alarm-glitterscale" src="sounds/glitterscale.wav"></audio>
 <audio id="alarm-heoni" src="sounds/heoni.wav"></audio>
 <audio id="alarm-owin" src="sounds/owin.wav"></audio>
