@@ -5,7 +5,6 @@ let currentTimers = [];
 
 function createTimers(bossList, id){
     const container = document.getElementById(id);
-    let subButtonsHeight = 37;
 
     bossList.forEach(boss => {
         let div = document.createElement('div');
@@ -22,7 +21,6 @@ function createTimers(bossList, id){
     
         let tooltipLink = '';
         if (boss.tooltip !== '') {
-            subButtonsHeight += 32;
             tooltipLink = `
             <a target="_blank" class="subButton subButtonTooltip ${subButtonOrderClass}" title="${boss.tooltip}" onclick="handleExternalLinkClick(event)">
                 <i class="fas fa-star"></i>
@@ -32,7 +30,6 @@ function createTimers(bossList, id){
     
         let groupLink = '';
         if (boss.groupId !== '') {
-            subButtonsHeight += 32;
             groupLink = `
             <a target="_blank" class="subButton subButtonGroup ${subButtonOrderClass}" title="${boss.groupDisplayName}" onclick="handleExternalLinkClick(event)">
                 <i class="fas fa-users"></i>
