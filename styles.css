@@ -174,8 +174,10 @@ body {
 
 .timers {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow the timers to wrap to the next line */
+    justify-content: center; /* Center the timers within the container */
+    max-width: 800px; /* Set the maximum width of the container */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .timer {

@@ -1,4 +1,4 @@
-const baneBosses = [
+const bossesList = [
     { 
         id: 'heoni',
         minutes: 5,
@@ -46,10 +46,7 @@ const baneBosses = [
         groupId: '',
         groupDisplayName: '',
         autoRestart: true
-    }
-];
-
-const archfoeBosses = [
+    },
     { 
         id: 'tamru-the-black',
         minutes: 30,
@@ -86,9 +83,6 @@ const archfoeBosses = [
         groupDisplayName: 'Full Moon',
         autoRestart: false
     },
-];
-
-const eventBosses = [
     { 
         id: 'bane-lord',
         minutes: 25,

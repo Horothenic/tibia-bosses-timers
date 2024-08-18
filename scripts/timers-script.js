@@ -3,8 +3,8 @@ const secondInMilliseconds = 1000;
 let currentGroup = '';
 let currentTimers = [];
 
-function createTimers(bossList, id){
-    const container = document.getElementById(id);
+function createTimers(bossList, containerId){
+    const container = document.getElementById(containerId);
 
     bossList.forEach(boss => {
         let div = document.createElement('div');
