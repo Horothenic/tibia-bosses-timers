@@ -159,6 +159,14 @@ body {
     font-weight: bold;
 }
 
+.stop .tooltip small {
+    display: block; /* Ensure the small text is on a new line */
+    font-size: 12px; /* Adjust the size of the small text */
+    font-weight: normal; /* Make the text normal weight */
+    color: #555; /* Lighter gray for the small text */
+    margin-top: 5px; /* Space between the main and small text */
+}
+
 .stop button:hover .tooltip {
     opacity: 1; /* Show text on hover */
     visibility: visible; /* Make text visible */
@@ -188,6 +196,7 @@ body {
     border-radius: 10px;
     transition: transform 0.3s, background-color 0.3s; 
     position: relative;
+    outline: none;
 }
 
 .timer button .subButton {

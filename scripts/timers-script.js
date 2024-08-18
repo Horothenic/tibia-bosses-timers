@@ -219,3 +219,10 @@ function refreshTitle()
 function handleExternalLinkClick(event) {
     event.stopPropagation();
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.code === 'Space') {
+        event.preventDefault(); // Prevent scrolling when pressing space bar
+        forceStopTimers(); // Call your function
+    }
+});
