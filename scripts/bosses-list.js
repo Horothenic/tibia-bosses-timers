@@ -95,4 +95,16 @@ const bossesList = [
         groupDisplayName: '',
         autoRestart: true
     },
+    {
+        id: 'isle-of-evil',
+        minutes: 15,
+        seconds: 0,
+        displayName: 'Isle of Evil',
+        guideUrl: 'https://www.youtube.com/watch?v=KXu7MNfa2zc',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/isle_of_evil.gif',
+        tooltip: 'Is much faster if you logout on top of the tower, wait for the timer, then go down to logout at the bottom, logout, wait and repeat.',
+        groupId: '',
+        groupDisplayName: '',
+        autoRestart: true
+    },
 ];
