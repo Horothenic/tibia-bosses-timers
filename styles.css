@@ -342,3 +342,12 @@ body {
 #information-popup {
     display: none; /* or use visibility: hidden; */
 }
+
+.timer-info-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+.timer-info-text i {
+    margin-right: 8px; /* Adjust spacing as needed */
+}
