@@ -185,8 +185,8 @@ body {
 }
 
 .timer button {
-    width: 150px;
-    height: 150px;
+    width: 155px;
+    height: 155px;
     border: none;
     background-color: #fff;
     text-align: center;
@@ -243,10 +243,13 @@ body {
     margin-left: -35px;
 }
 
-.timer button .timer-info {
-    font-size: 16px;
-    color: #444;
+.timer button .timer-info{
     margin: 0;
+}
+
+.timer button .timer-info h3{
+    font-size: 18px;
+    color: #444;
 }
 
 .timer button h1 {
