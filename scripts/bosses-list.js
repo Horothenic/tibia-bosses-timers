@@ -6,7 +6,7 @@ const bossesList = [
         displayName: 'Heoni',
         guideUrl: 'https://www.youtube.com/watch?v=H09LVfDpZl8',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/heoni.webp',
-        tooltip: '',
+        tooltip: 'You can rest right below the stairs to be totally safe.',
         groupId: '',
         groupDisplayName: '',
         autoRestart: true
@@ -18,7 +18,7 @@ const bossesList = [
         displayName: 'Black Knight',
         guideUrl: 'https://www.youtube.com/watch?v=5FAeMzksGqc',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/black-knight.webp',
-        tooltip: '',
+        tooltip: 'You can rest before the yellow doors on the floor on top and be totally safe.',
         groupId: '',
         groupDisplayName: '',
         autoRestart: true
@@ -27,10 +27,10 @@ const bossesList = [
         id: 'diseased',
         minutes: 4,
         seconds: 0,
-        displayName: 'Diseased',
+        displayName: 'Diseased Brothers',
         guideUrl: 'https://www.youtube.com/watch?v=NGFseS_XI7I,',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708877549/tibia-bane-bosses-farming-timers/diseased-bros.gif',
-        tooltip: '',
+        tooltip: 'You can go above the stairs of entrance of the area to be totally safe.',
         groupId: '',
         groupDisplayName: '',
         autoRestart: true
@@ -54,7 +54,7 @@ const bossesList = [
         displayName: 'Tamru',
         guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/tamru_the_black.gif',
-        tooltip: '',
+        tooltip: 'You can rest at the boat safe zone to be totally safe.',
         groupId: "full-moon",
         groupDisplayName: 'Full Moon',
         autoRestart: false
@@ -66,7 +66,7 @@ const bossesList = [
         displayName: 'Ayana',
         guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/ayana_the_crimson_curse.gif',
-        tooltip: '',
+        tooltip: 'You can rest at the boat safe zone to be totally safe.',
         groupId: "full-moon",
         groupDisplayName: 'Full Moon',
         autoRestart: false
@@ -78,7 +78,7 @@ const bossesList = [
         displayName: 'Owin',
         guideUrl: 'https://www.youtube.com/watch?v=1kP6PObh4GY',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878589/tibia-bane-bosses-farming-timers/owin.gif',
-        tooltip: '',
+        tooltip: 'You can trap yourself with fire north of the spawn point and logout there.',
         groupId: "full-moon",
         groupDisplayName: 'Full Moon',
         autoRestart: false
