@@ -1,4 +1,4 @@
-const bossesList = [
+const bossesGeneralList = [
     { 
         id: 'heoni',
         minutes: 5,
@@ -8,7 +8,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/heoni.webp',
         tooltip: 'You can rest right below the stairs to be totally safe.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     { 
@@ -20,7 +19,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708572875/tibia-bane-bosses-farming-timers/black-knight.webp',
         tooltip: 'You can rest before the yellow doors on the floor on top and be totally safe.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     { 
@@ -32,7 +30,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1708877549/tibia-bane-bosses-farming-timers/diseased-bros.gif',
         tooltip: 'You can go above the stairs of entrance of the area to be totally safe.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     { 
@@ -44,44 +41,7 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1709265621/tibia-bane-bosses-farming-timers/glitterscale.webp',
         tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you, be careful if you go this route.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
-    },
-    { 
-        id: 'tamru-the-black',
-        minutes: 30,
-        seconds: 0,
-        displayName: 'Tamru',
-        guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
-        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/tamru_the_black.gif',
-        tooltip: 'You can rest at the boat safe zone to be totally safe.',
-        groupId: "full-moon",
-        groupDisplayName: 'Full Moon',
-        autoRestart: false
-    },
-    { 
-        id: 'ayana-the-crimson-curse',
-        minutes: 30,
-        seconds: 0,
-        displayName: 'Ayana',
-        guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
-        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/ayana_the_crimson_curse.gif',
-        tooltip: 'You can rest at the boat safe zone to be totally safe.',
-        groupId: "full-moon",
-        groupDisplayName: 'Full Moon',
-        autoRestart: false
-    },
-    { 
-        id: 'owin',
-        minutes: 30,
-        seconds: 0,
-        displayName: 'Owin',
-        guideUrl: 'https://www.youtube.com/watch?v=1kP6PObh4GY',
-        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878589/tibia-bane-bosses-farming-timers/owin.gif',
-        tooltip: 'You can trap yourself with fire north of the spawn point and logout there.',
-        groupId: "full-moon",
-        groupDisplayName: 'Full Moon',
-        autoRestart: false
     },
     { 
         id: 'bane-lord',
@@ -92,7 +52,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/bane_lord.gif',
         tooltip: 'The possibility of an event is exact so try to start the timer a few seconds before the cue.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     {
@@ -104,7 +63,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/isle_of_evil.gif',
         tooltip: 'Is much faster if you logout on top of the tower, wait for the timer, then go down to logout at the bottom, logout, wait and repeat.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     {
@@ -116,7 +74,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/thawing_dragon_lord.webp',
         tooltip: 'You need to use the frozen dragon lord to start the fight, be careful being AFK cause others can troll you.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     {
@@ -128,7 +85,6 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/dazed_leaf_golem.webp',
         tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you, be careful if you go this route.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
     {
@@ -140,7 +96,42 @@ const bossesList = [
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/jailer.webp',
         tooltip: 'You can rest in the boat and be totally safe.',
         groupId: '',
-        groupDisplayName: '',
         autoRestart: true
     },
+];
+
+const fullMoonBossesList = [
+    { 
+        id: 'tamru-the-black',
+        minutes: 30,
+        seconds: 0,
+        displayName: 'Tamru',
+        guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/tamru_the_black.gif',
+        tooltip: 'You can rest at the boat safe zone to be totally safe.',
+        groupId: "full-moon",
+        autoRestart: false
+    },
+    { 
+        id: 'ayana-the-crimson-curse',
+        minutes: 30,
+        seconds: 0,
+        displayName: 'Ayana',
+        guideUrl: 'https://www.youtube.com/watch?v=s77JxerP1KQ',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878588/tibia-bane-bosses-farming-timers/ayana_the_crimson_curse.gif',
+        tooltip: 'You can rest at the boat safe zone to be totally safe.',
+        groupId: "full-moon",
+        autoRestart: false
+    },
+    { 
+        id: 'owin',
+        minutes: 30,
+        seconds: 0,
+        displayName: 'Owin',
+        guideUrl: 'https://www.youtube.com/watch?v=1kP6PObh4GY',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719878589/tibia-bane-bosses-farming-timers/owin.gif',
+        tooltip: 'You can trap yourself with fire north of the spawn point and logout there.',
+        groupId: "full-moon",
+        autoRestart: false
+    }
 ];
