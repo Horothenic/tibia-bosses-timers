@@ -107,4 +107,40 @@ const bossesList = [
         groupDisplayName: '',
         autoRestart: true
     },
+    {
+        id: 'thawing-dragon-lord',
+        minutes: 10,
+        seconds: 0,
+        displayName: 'Thawing Dragon Lord',
+        guideUrl: 'https://youtu.be/TyOeoOyof28?si=ziovNoKbGIu85nEa&t=49',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/thawing_dragon_lord.webp',
+        tooltip: 'You need to use the frozen dragon lord to start the fight, be careful being AFK cause others can troll you.',
+        groupId: '',
+        groupDisplayName: '',
+        autoRestart: true
+    },
+    {
+        id: 'dazed-leaf-golem',
+        minutes: 6,
+        seconds: 0,
+        displayName: 'Dazed Leaf Golem',
+        guideUrl: 'https://youtu.be/SXmTL55XuJg?si=oQ_x_VqTcfqGd-5V&t=48',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/dazed_leaf_golem.webp',
+        tooltip: 'There is a tile where you can stay and the boss will spawn and walk towards you, be careful if you go this route.',
+        groupId: '',
+        groupDisplayName: '',
+        autoRestart: true
+    },
+    {
+        id: 'jailer',
+        minutes: 5,
+        seconds: 0,
+        displayName: 'Jailer',
+        guideUrl: 'https://www.youtube.com/watch?v=BkPEZIqHoVo&t=6s',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/jailer.webp',
+        tooltip: 'You can rest in the boat and be totally safe.',
+        groupId: '',
+        groupDisplayName: '',
+        autoRestart: true
+    },
 ];
