@@ -28,19 +28,10 @@ function createTimers(bossList, containerId){
             subButtonOrderClass = 'subButtonThird';
         }
     
-        let groupLink = '';
-        if (boss.groupId !== '') {
-            groupLink = `
-            <a target="_blank" class="subButton subButtonGroup ${subButtonOrderClass}" title="${boss.groupDisplayName}" onclick="handleExternalLinkClick(event)">
-                <i class="fas fa-users"></i>
-            </a>`;
-        }
-    
         div.innerHTML = `
             <button id="${boss.id}-button" onclick='startTimer(${JSON.stringify(boss)})'>
                 ${externalLink}
                 ${tooltipLink}
-                ${groupLink}
                 <img src="${boss.gifUrl}" alt="${boss.displayName}">
                 <div class="timer-info">
                     <h3>${boss.displayName}</h3>
