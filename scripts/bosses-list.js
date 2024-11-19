@@ -89,8 +89,8 @@ const bossesGeneralList = [
     },
     {
         id: 'jailer',
-        minutes: 5,
-        seconds: 30,
+        minutes: 6,
+        seconds: 0,
         displayName: 'Jailer',
         guideUrl: 'https://www.youtube.com/watch?v=BkPEZIqHoVo&t=6s',
         gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1730331867/tibia-bane-bosses-farming-timers/jailer.webp',
