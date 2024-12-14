@@ -200,7 +200,7 @@ function refreshTitle()
             }
         });
 
-        document.title = `${formatTime(nextTimerData.totalSeconds - nextTimerData.secondsElapsed)} - ${nextTimerData.boss.groupDisplayName}`;
+        document.title = `${formatTime(nextTimerData.totalSeconds - nextTimerData.secondsElapsed)} - ${nextTimerData.boss.displayName}`;
     }
     else {
         document.title = `Tibia Bosses Timers`;
