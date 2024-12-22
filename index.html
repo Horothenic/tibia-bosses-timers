@@ -52,9 +52,20 @@
             <p class="explanation">These bosses can appear between 30 and 60 minutes after a kill.</p>
         </div>
 
-        <div class="timers" id="full-moon.timers-container">
+        <div class="timers" id="full-moon-timers-container">
             <script>
-                createTimers(fullMoonBossesList, 'full-moon.timers-container');
+                createTimers(fullMoonBossesList, 'full-moon-timers-container');
+            </script>
+        </div>
+
+        <div>
+            <h1 class="subtitle">SPECIALS</h1>
+            <p class="explanation">These are monsters or bosses that benefit of a timer to complete them.</p>
+        </div>
+
+        <div class="timers" id="special-timers-container">
+            <script>
+                createTimers(specialBossesList, 'special-timers-container');
             </script>
         </div>
     </div>
@@ -129,3 +140,4 @@
 <audio id="alarm-thawing-dragon-lord" src="sounds/thawing-dragon-lord.wav"></audio>
 <audio id="alarm-dazed-leaf-golem" src="sounds/dazed-leaf-golem.wav"></audio>
 <audio id="alarm-jailer" src="sounds/jailer.wav"></audio>
+<audio id="alarm-animated-snowman" src="sounds/animated-snowman.wav"></audio>

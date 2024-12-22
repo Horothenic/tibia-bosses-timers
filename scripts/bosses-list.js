@@ -43,17 +43,6 @@ const bossesGeneralList = [
         groupId: '',
         autoRestart: true
     },
-    { 
-        id: 'bane-lord',
-        minutes: 25,
-        seconds: 0,
-        displayName: 'Bane Lord',
-        guideUrl: 'https://www.youtube.com/watch?v=Pip3dN_StkU',
-        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/bane_lord.gif',
-        tooltip: 'The possibility of an event is exact so try to start the timer a few seconds before the cue.',
-        groupId: '',
-        autoRestart: true
-    },
     {
         id: 'isle-of-evil',
         minutes: 15,
@@ -134,4 +123,29 @@ const fullMoonBossesList = [
         groupId: "full-moon",
         autoRestart: false
     }
+];
+
+const specialBossesList = [
+    { 
+        id: 'bane-lord',
+        minutes: 25,
+        seconds: 0,
+        displayName: 'Bane Lord',
+        guideUrl: 'https://www.youtube.com/watch?v=Pip3dN_StkU',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1719877762/tibia-bane-bosses-farming-timers/bane_lord.gif',
+        tooltip: 'The possibility of an event is exact so try to start the timer a few seconds before the cue.',
+        groupId: '',
+        autoRestart: true
+    },
+    { 
+        id: 'animated-snowman',
+        minutes: 5,
+        seconds: 0,
+        displayName: 'A. Snowman',
+        guideUrl: 'https://www.youtube.com/watch?v=k2P-wcX74q4&ab_channel=Xarkost',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1734890333/tibia-bane-bosses-farming-timers/animated-snowman.gif',
+        tooltip: 'Try to kill this as a group and only using the timer for your turn to spawn it.',
+        groupId: '',
+        autoRestart: true
+    },
 ];
