@@ -87,6 +87,17 @@ const bossesGeneralList = [
         groupId: '',
         autoRestart: true
     },
+    {
+        id: 'gorga',
+        minutes: 10,
+        seconds: 0,
+        displayName: 'Gorga',
+        guideUrl: 'https://www.youtube.com/watch?v=H5xMMjvXZ1g&ab_channel=Opandaogamer',
+        gifUrl: 'https://res.cloudinary.com/drojh09io/image/upload/v1743270178/tibia-bane-bosses-farming-timers/Gorga.gif',
+        tooltip: 'You can wait by the grass tiles in the middle bottom of the room.',
+        groupId: '',
+        autoRestart: true
+    },
 ];
 
 const fullMoonBossesList = [
