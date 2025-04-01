@@ -89,7 +89,7 @@ const bossesGeneralList = [
     },
     {
         id: 'gorga',
-        minutes: 10,
+        minutes: 11,
         seconds: 0,
         displayName: 'Gorga',
         guideUrl: 'https://www.youtube.com/watch?v=H5xMMjvXZ1g&ab_channel=Opandaogamer',
